@@ -3,6 +3,7 @@ import sys
 import random
 import pygame
 import time
+from files import *
 
 pygame.init()
 
@@ -47,6 +48,17 @@ choosenWord = font.render(choose(randomed(words)-1), True, (0, 0, 0), (202, 228,
 textRect = choosenWord.get_rect()
 textRect.center = (620 /2, 300)
 screen.blit(choosenWord, textRect)
+
+#files
+
+checkFileExistance("words.txt")
+writeFile("words.txt", (input("Entrez les mots que vous voulez rajouter dans le fichier et séparez les par des ';' :\n").split(";")))
+print(readFile("words.txt"))
+removeWords("words.txt", input("LEs mots à enlever :\n"))
+print(readFile("words.txt"))
+
+
+#end of files
 
 run = True
 
