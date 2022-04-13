@@ -1,0 +1,1 @@
+This is a python program to generate words to play a game "Déssiné c'est gagné" (its the french name idk the engligh one)
