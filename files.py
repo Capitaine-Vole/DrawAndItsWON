@@ -39,6 +39,7 @@ def removeWords(name, content):
             print(lines)
             f.close()
         with open(name, "w") as f:
-            x = lines.strip(content)
-            f.write(x)
+            for line in lines:
+                x = line.strip(content)
+                f.write(x)
             f.close()

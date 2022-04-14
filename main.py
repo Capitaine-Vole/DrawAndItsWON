@@ -9,7 +9,7 @@ pygame.init()
 
 screen = pygame.display.set_mode((640, 480))
 pygame.display.set_caption("Déssiné c'est gagné")
-icon = pygame.image.load("icon.png").convert_alpha()
+icon = pygame.image.load("img/icon.png").convert_alpha()
 pygame.display.set_icon(icon)
 
 words = ["un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix"]
@@ -37,9 +37,9 @@ class Button():
         
         screen.blit(self.image, (self.rect.x, self.rect.y))
 
-genIMG = pygame.image.load('new_word.png').convert_alpha()
+genIMG = pygame.image.load('img/new_word.png').convert_alpha()
 genBTN = Button(220, 100, genIMG)
-greyIMG = pygame.image.load('grey_bc.png').convert_alpha()
+greyIMG = pygame.image.load('img/grey_bc.png').convert_alpha()
 greyBTN = Button(220, 100, greyIMG)
 
 font = pygame.font.Font('freesansbold.ttf', 32)
@@ -57,8 +57,12 @@ print(readFile("words.txt"))
 removeWords("words.txt", input("LEs mots à enlever :\n"))
 print(readFile("words.txt"))
 
-
 #end of files
+
+listo = font.render(readFile("words.txt"), True,  (0, 0, 0), (202, 228, 241))
+tr = listo.get_rect()
+tr.center = (75, 75)
+screen.blit(listo, tr)
 
 run = True
 
