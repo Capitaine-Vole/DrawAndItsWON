@@ -1,5 +1,4 @@
 import os
-from re import X
 
 def checkFileExistance(name):
     try:
